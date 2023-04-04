@@ -1,21 +1,17 @@
-import React, { useContext } from 'react'
-import { Header, Testimonial, Skills, Work, About, Footer } from './container';
+import React from 'react'
+import { Header, Skills, Work, About, Footer } from './container';
 import { Navbar } from './components';
 import './App.scss';
 
-import { DarkModeContext } from './context/darkModeContext';
-
 function App() {
-	const { darkMode } = useContext(DarkModeContext)
-
 	return (
-		<div className={darkMode ? "app__dark" : ""}>
+		<div>
 			<Navbar/>
 			<Header />
 			<About />
 			<Work />
 			<Skills />
-			<Testimonial />
+			{/* <Testimonial /> */}
 			<Footer />
 		</div>
 	)

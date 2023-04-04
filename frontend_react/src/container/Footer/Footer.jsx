@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { images } from '../../constants'
-import { urlFor, client } from '../../client';
+import { client } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import './Footer.scss'
 
@@ -36,15 +36,15 @@ function Footer() {
 	}
 	return (
 		<>
-			<h2 className='head-text'>Take a coffe & chat with me</h2>
+			<h2 className='head-text'>Take a <span>coffe</span> & <span>chat</span> with me</h2>
 			<div className='app__footer-cards'>
 				<div className='app__footer-card'>
 					<img src={images.email} alt="email" />
-					<a target="_blank" href='mailto:palrajdip33@gmail.com' className='p-text'>palrajdip33@gmail.com</a>
+					<a target="_blank" rel='noreferrer' href='mailto:palrajdip33@gmail.com' className='p-text'>palrajdip33@gmail.com</a>
 				</div>
 				<div className='app__footer-card'>
 					<img src={images.mobile} alt="mobile" />
-					<a target="_blank" href='tel: +91 6289238377' className='p-text'>+91 6289238377</a>
+					<a target="_blank" rel='noreferrer' href='tel: +91 6289238377' className='p-text'>+91 6289238377</a>
 				</div>
 			</div>
 
@@ -64,7 +64,7 @@ function Footer() {
 					</div>
 					:
 					<div>
-						<h3 className='head-text'>Thank you for getting in touch</h3>
+						<h3 className='head-text'><span>Thank you</span> for getting in touch</h3>
 					</div>
 			}
 		</>
@@ -74,5 +74,5 @@ function Footer() {
 export default AppWrap(
 	MotionWrap(Footer, 'app__footer'),
 	'contact',
-	'app__whitebg'
+	'app__primarybg'
 );

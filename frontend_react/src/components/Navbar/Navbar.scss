@@ -6,7 +6,8 @@
 	align-items: center;
 
 	padding: 1rem 2rem;
-	background: rgba(255, 255, 255, 0.25);
+	background-color: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 1px 4px rgba(146, 161, 176 , 10%);
 	backdrop-filter: blur(4px);
 	-webkit-backdrop-filter: blur(4px);
 	
@@ -88,7 +89,8 @@
 	height: 35px;
 	border-radius: 50%;
 	position: relative;
-
+	cursor: pointer;
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;

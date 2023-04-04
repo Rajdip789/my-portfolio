@@ -1,22 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import './Navbar.scss'
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
-import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
 import { motion } from 'framer-motion';
 
 import { images } from '../../constants'
-import { DarkModeContext } from "../../context/darkModeContext";
 
 function Navbar() {
 	const [toggle, setToggle] = useState(false);
-	const [darkMode, setDarkMode] = useState(false)
-	const { dispatch } = useContext(DarkModeContext);
 
 	return (
 		<nav className='app__navbar'>
-			<div className='app__navbar-logo'>
-				<img src={images.logo} alt='logo' />
-			</div>
+			<a href='#home' className='app__navbar-logo'>
+					<img src={images.logo} alt='logo' />
+			</a>
 			<ul className='app__navbar-links'>
 				{
 					['home', 'about', 'work', 'skills', 'contact'].map((item) => (
@@ -27,13 +23,6 @@ function Navbar() {
 					))
 				}
 			</ul>
-			<div className="item" onClick={() => { dispatch({ type: "TOGGLE" }); setDarkMode(!darkMode) }}>
-				{
-					darkMode ?
-						<MdOutlineLightMode className="icon" size={20} color='gray' /> :
-						<MdOutlineDarkMode className="icon" size={20} color='gray' />
-				}
-			</div>
 			<div className='app__navbar-menu'>
 				<HiMenuAlt4 onClick={() => setToggle(true)} />
 

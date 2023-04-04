@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Tooltip } from 'react-tooltip';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
@@ -17,32 +16,28 @@ function Skills() {
 
 		client.fetch(query)
 			.then((data) => {
-				//console.log(data)
 				setExperience(data);
 			})
 
 		client.fetch(skillsQuery)
 			.then((data) => {
-				//console.log(data)
 				setSkills(data);
 			})
 	}, [])
 
 	return (
 		<>
-			<h2 className='head-text'>Skills & Experience</h2>
+			<h2 className='head-text'><span>Skills</span> & Education</h2>
 
 			<div className='app__skills-container'>
-				<motion.div
-					className='app__skils-list'
-				>
+				<motion.div className='app__skils-list'>
 					{
-						skills.map((skill) =>
+						skills.map((skill, i) => 
 							<motion.div
 								whileInView={{ opacity: [0, 1] }}
 								transition={{ duration: 0.5 }}
 								className="app_skills-item app__flex"
-								key={skill.name}
+								key={i}
 							>
 								<div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
 									<img src={urlFor(skill.icon)} alt={skill.name} />
@@ -54,46 +49,38 @@ function Skills() {
 				</motion.div>
 
 				<motion.div className="app__skills-exp">
+					{/* {console.log(experience)} */}
 					{
-						experience.map((experience) => (
-							<>
-								<motion.div
+						experience.sort((a, b) => a._createdAt > b._createdAt? 1 : -1).map((ex, i) => (
+							<div key={i}>
+								<motion.div 
+									whileInView={{ opacity: [0, 1] }}
+									transition={{ duration: 1 }}
 									className='app_skills-exp-itme'
-									key={experience.year}
 								>
 									<div className='app__skills-exp-year'>
-										<p className='bold-text'>{experience.year}</p>
+										<p className='bold-text'>{ex.year}</p>
 									</div>
 									<motion.div className='app_skills-exp-works'>
 										{
-											experience.works.map((work) => (
-												<>
+											ex.works.map((work,i) => (
+												<div key={i}>
 													<motion.div
 														whileInView={{ opacity: [0, 1] }}
 														transition={{ duration: 0.5 }}
 														className="app_skills-exp-work"
-														data-tip
-														data-for={work.name}
-														key={work.name}
 													>
 														<h4 className='bold-text'>{work.name}</h4>
-														<p className='p-text'>{work.company}</p>
+														<p className='p2-text'>{work.company}</p>
 													</motion.div>
 
-													<Tooltip
-														id={work.name}
-														effect="solid"
-														arrowColor="#fff"
-														className="skills-tooltip"
-													>
-														{work.desc}
-													</Tooltip>
-												</>
+													<p>{work.desc}</p>
+												</div>
 											))
 										}
 									</motion.div>
 								</motion.div>
-							</>
+							</div>
 						))
 					}
 				</motion.div>
