@@ -3,7 +3,7 @@
 ### [View Live]()
 
 <p align="center" width="100%">
-    <img width="88%" src="" alter="Landing Page">
+    <img width="88%" src="https://github.com/Rajdip789/my-portfolio/blob/master/frontend_react/public/showcase.png" alter="Landing Page">
 </p>
 
 <h2> Tech Stack </h2>
