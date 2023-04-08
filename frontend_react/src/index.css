@@ -10,6 +10,11 @@
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+
+  --title1: 18;
+  --title2: 17;
+  --title3: 14;
+  --title4: 17;
 }
 
 * {

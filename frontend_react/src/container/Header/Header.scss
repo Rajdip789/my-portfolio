@@ -40,61 +40,76 @@
 					margin-left: 10px;
 					font-weight: bold;
 				}
+
+				@media screen and (max-width: 480px) {
+					font-size: 40px;
+				}
 			}
 
 			.home2__text {
 				display: flex;
 				font-size: 40px;
 
-
-				@for $i from 1 through 5 {
+				@for $i from 1 through 4 {
 					.animation__div :nth-child(#{$i}) {
+
 						width: min-content;
+
 						div {
 							color: var(--secondary-color);
-							margin-left: 10px;
+							font-family: Consolas,"courier new";
+							font-size: larger;
 							font-weight: bold;
 							overflow: hidden;
 							display: inline-block;
 							position: relative;
 							white-space: nowrap;
-							animation: textMotion 10s steps(50) infinite;
+							animation: textMotion 10s steps(var(--title+$i)) infinite;
 						}
 
-						div::after{
+						div::after {
 							content: "|";
 							position: absolute;
-							right: 0;
+							right: -10px;
 							animation: caret infinite;
 							animation-duration: 1s;
 							animation-timing-function: steps(1, end);
 						}
 					}
-					
+
 					@keyframes textMotion {
-						0%,
-						50%,
-						100% {
-							width: 0;
+						0% {
+							width: 0%;
 						}
-		
-						10%,
-						40% {
+
+						30% {
 							width: 100%;
+						}
+						
+						70% {
+							width: 100%;
+						}
+
+						100% {
+							width: 0%;
 						}
 					}
 				}
-	
+
 				@keyframes caret {
-	
+
 					0%,
 					100% {
 						opacity: 0;
 					}
-	
+
 					50% {
 						opacity: 1;
 					}
+				}
+
+				@media screen and (max-width: 480px) {
+					font-size: 30px;
 				}
 			}
 		}
@@ -167,11 +182,11 @@
 		padding-top: 8rem;
 	}
 
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1200px) {
 		flex-direction: column;
 	}
 
 	@media screen and (max-width: 450px) {
-		padding: 6rem 1rem 2rem;
+		padding: 4rem 0.5rem 2rem;
 	}
 }

@@ -5,7 +5,7 @@ import './About.scss';
 import { urlFor, client } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
 
-function About() {
+function Technologies() {
 	const [abouts, setAbouts] = useState([])
 
 	useEffect(() => {
@@ -19,11 +19,16 @@ function About() {
 	return (
 		<>
 			<h2 className='head-text'>
-				I know That
+				<span>Tools </span>
+				and
+				<span> Technologies</span> 
+				<br />
+				I am in
+				{/* I know That
 				<span> Good Development</span>
 				<br />
 				means
-				<span> Good Business</span>
+				<span> Good Business</span> */}
 			</h2>
 
 			<div className='app__profiles'>
@@ -48,7 +53,7 @@ function About() {
 }
 
 export default AppWrap(
-	MotionWrap(About, 'app__about'),
-	'about',
+	MotionWrap(Technologies, 'app__about'),
+	'technologies',
 	'app__whitebg'
 );
