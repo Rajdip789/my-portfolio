@@ -24,11 +24,6 @@ function Technologies() {
 				<span> Technologies</span> 
 				<br />
 				I am in
-				{/* I know That
-				<span> Good Development</span>
-				<br />
-				means
-				<span> Good Business</span> */}
 			</h2>
 
 			<div className='app__profiles'>

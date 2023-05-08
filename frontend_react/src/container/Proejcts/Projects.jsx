@@ -32,10 +32,8 @@ function Projects() {
 			if (item === 'All') {
 				setFilterWork(works);
 			} else {
-				console.log(item);
-
 				works.forEach(work => {
-					console.log(work);
+					//console.log(work);
 				});
 				setFilterWork(works.filter((work) => work.tags.includes(item)));
 			}
