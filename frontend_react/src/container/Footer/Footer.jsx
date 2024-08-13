@@ -40,11 +40,11 @@ function Footer() {
 			<div className='app__footer-cards'>
 				<div className='app__footer-card'>
 					<img src={images.email} alt="email" />
-					<a target="_blank" rel='noreferrer' href='mailto:palrajdip33@gmail.com' className='p-text'>palrajdip33@gmail.com</a>
+					<a target="_blank" rel='noreferrer' href='mailto:palrajdip141@gmail.com' className='p-text'>palrajdip141@gmail.com</a>
 				</div>
 				<div className='app__footer-card'>
 					<img src={images.mobile} alt="mobile" />
-					<a target="_blank" rel='noreferrer' href='tel: +91 6289238377' className='p-text'>+91 6289238377</a>
+					<a target="_blank" rel='noreferrer' href='tel: +91 7059287406' className='p-text'>+91 7059287406</a>
 				</div>
 			</div>
 
