@@ -63,7 +63,7 @@ function Header() {
 				</div>
 
 				<div className='tag-cmp app__flex'>
-					<p className='p3-text'>I am currently a 4th year CSE student. I have great interest in exploring new technologies. I build web application using Javascript econsystem (MERN). Along with that I have experiences in building web application from scratch to production ready. Currently I am open for SDE roles and looking for opportunities in the field of Software Engineering.</p>
+					<p className='p3-text'>I have great interest in exploring new technologies. I build web application using Javascript econsystem (MERN). Along with that I have experiences in building web application from scratch to production ready. Currently I am open for SDE and DevOps roles and looking for opportunities in the field of Software Engineering.</p>
 				</div>
 				<div className='app__social home__social'>
 					<div><a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/rajdip14/'><FaLinkedin /></a></div>
