@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "framework": "react",
-  "nodeVersion": "24.x"
+  "framework": "react"
 }
