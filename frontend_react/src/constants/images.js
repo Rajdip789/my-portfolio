@@ -19,6 +19,7 @@ import typescript from '../assets/typescript.png';
 import vue from '../assets/vue.png';
 
 import profile2 from '../assets/profile2.png';
+import profile3 from '../assets/profile3.jpeg';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 
@@ -51,6 +52,7 @@ export default {
   typescript,
   vue,
   profile2,
+  profile3,
   circle,
   logo,
   adidas,

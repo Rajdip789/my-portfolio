@@ -9,21 +9,25 @@ import { BsTwitter, BsInstagram } from 'react-icons/bs';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const titleArr = [
-	"Frontend Developer",
-	"Backend Developer",
-	"Mern Developer",
 	"Software Engineer",
+	"Backend Developer",
+	"Frontend Developer",
+	"Cloud Engineer",
 ]
 
 function Header() {
 	const [title, setTitle] = useState(0)
 	const [dlink, setDlink] = useState('');
+	const [intro, setIntro] = useState('');
 
 	useEffect(() => {
 		const query = '*[_type == "brands"]';
 
 		client.fetch(query)
-			.then(data => setDlink(data[0].name))
+			.then(data => {
+				setDlink(data[1].name)
+				setIntro(data[0].name)
+			})
 	}, [])
 
 	useEffect(() => {
@@ -63,7 +67,7 @@ function Header() {
 				</div>
 
 				<div className='tag-cmp app__flex'>
-					<p className='p3-text'>I have great interest in exploring new technologies. I build web application using Javascript econsystem (MERN). Along with that I have experiences in building web application from scratch to production ready. Currently I am open for SDE and DevOps roles and looking for opportunities in the field of Software Engineering.</p>
+					<p className='p3-text'> {intro} </p>
 				</div>
 				<div className='app__social home__social'>
 					<div><a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/rajdip14/'><FaLinkedin /></a></div>
@@ -96,7 +100,7 @@ function Header() {
 				transition={{ duration: 0.5 }}
 				className='app__header-img'
 			>
-				<img src={images.profile2} alt='profile_bg' className='profile_img' />
+				<img src={images.profile3} alt='profile_bg' className='profile_img' />
 			</motion.div>
 		</div>
 	)
